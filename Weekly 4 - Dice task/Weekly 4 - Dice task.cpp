@@ -176,6 +176,27 @@ void calculate_6s() {
 
 }
 
+void calculate_pairs() {
+
+    int countpair = 0;
+
+    if (dice1 == dice2 || dice1 == dice3 || dice1 == dice4 || dice1 == dice5) {
+        countpair += 1;
+    }
+    else if (dice2 == dice3 || dice2 == dice4 || dice2 == dice5) {
+        countpair += 1;
+    }
+    else if (dice3 == dice4 || dice3 == dice5) {
+        countpair += 1;
+    }
+    else if (dice4 == dice5) {
+        countpair += 1;
+    }
+
+    std::cout << "\n\n You have " << countpair << " pairs of dice.";
+
+}
+
 int main()
 {
     do {
@@ -186,6 +207,7 @@ int main()
         std::cout << std::endl;
     } while (stop_game == false);
     calculate_6s();
+    calculate_pairs();
 
     system("pause");
 }
